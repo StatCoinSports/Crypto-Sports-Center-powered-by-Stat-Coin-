@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crypto Sports Center</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="web3.js"></script>
+</head>
+<body>
+  <h1>Crypto Sports Center dApp</h1>
+  <button onclick="connectWallet()">Connect Wallet</button>
+  <button onclick="connectAndBurn()">Burn Tokens</button>
+  <p id="wallet-address"></p>
+
+  <script>
+    async function connectWallet() {
+      if (window.ethereum) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        const signer = provider.getSigner();
+        const address = await signer.getAddress();
+        document.getElementById("wallet-address").innerText = "Connected: " + address;
+      } else {
+        alert("MetaMask not found. Please install it.");
+      }
+    }
+  </script>
+</body>
+</html>
