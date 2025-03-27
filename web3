@@ -1,0 +1,24 @@
+const contractABI = [
+  "function burn(uint256 _amount) external",
+  "function totalSupply() public view returns (uint256)"
+];
+
+let contractAddress = "0xYourContractAddressHere";
+
+async function connectAndBurn() {
+  if (window.ethereum) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    try {
+      const tx = await contract.burn(100); // example burn
+      await tx.wait();
+      alert("Burn successful!");
+    } catch (err) {
+      console.error("Error:", err);
+      alert("Transaction failed.");
+    }
+  } else {
+    alert("MetaMask not found.");
+  }
+}
