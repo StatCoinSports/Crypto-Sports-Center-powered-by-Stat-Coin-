@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crypto Sports Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="web3.js"></script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Crypto Sports Center Logo" class="logo"/>
+    <h1>Tokens that move with the game</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Stake</a></li>
+        <li><a href="#">Trade</a></li>
+        <li><a href="#">NFTs</a></li>
+        <li><a href="#">Stats</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Stake your favorite players and earn rewards as they perform</h2>
+    <button onclick="connectWallet()">Connect Wallet</button>
+    <p id="wallet-address"></p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Player 1</h3>
+      <p>Token Value: 1280</p>
+      <button>Stake</button>
+    </div>
+    <div class="card">
+      <h3>Player 2</h3>
+      <p>Token Value: 2580</p>
+      <button>Trade</button>
+    </div>
+    <div class="card">
+      <h3>Player 3</h3>
+      <p>Token Value: 2290</p>
+      <button>Stake</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Crypto Sports Center | Patent Pending</p>
+  </footer>
+</body>
+</html>
